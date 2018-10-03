@@ -1,10 +1,32 @@
 <!doctype html>
 <html>
 <head>
-    <title></title>
+    <title>Tic Tac</title>
 
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-    </body>
-    </html>
+    <link rel="stylesheet" href="tictac.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="space" id="0">0</td>
+            <td class="space" id="1">0</td>
+            <td class="space" id="2">0</td>
+        </tr>
+        <tr>
+            <td class="space" id="3">0</td>
+            <td class="space" id="4">0</td>
+            <td class="space" id="5">0</td>
+        </tr>
+        <tr>
+            <td class="space" id="6">0</td>
+            <td class="space" id="7">0</td>
+            <td class="space" id="8">0</td>
+        </tr>
+    </table>
+    <div class="end-game"></div>
+    <button onClick="startGame()">replay</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
