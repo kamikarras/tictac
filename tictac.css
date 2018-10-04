@@ -33,12 +33,12 @@ table tr td:last-child{
 .end-game{
     display: none;
     width: 200px;
+    height: 200px;
     top: 120px;
     background-color: grey;
     position: absolute;
     left: 50%;
     transform: tanslateX(-50%);
-    padding: 50% 0;
     text-align: center;
     border-radius: 5px;
     color: white;
