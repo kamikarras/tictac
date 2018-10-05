@@ -34,13 +34,23 @@ table tr td:last-child{
     display: none;
     width: 200px;
     height: 200px;
-    top: 120px;
-    background-color: grey;
+    top: 160px;
+    background-color: pink;
     position: absolute;
     left: 50%;
-    transform: tanslateX(-50%);
+    transform: translateX(-50%);
     text-align: center;
     border-radius: 5px;
     color: white;
     font-size: 2em;
+}
+
+.text {
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius:10px;
 }
