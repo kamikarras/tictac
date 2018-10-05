@@ -74,7 +74,7 @@ function emptySquares() {
 }
 
 function bestSpot(){
-    return emptySquares()[0];
+    return minimax(origBoard, comp).index;
 }
 
 function checkTie() {
@@ -90,6 +90,56 @@ function checkTie() {
 }
 
 
+function minimax(newBoard, player) {
+    var availSpots = emptySquares(newBoard);
+
+    if (checkWin(newBoard, player)) {
+        return {score: -10};
+    } else if (checkWin(newBoard, comp)) {
+        return {score : 20};
+    } else if (availSpots.length === 0) {
+        return {score: 0};
+    }
+
+    var moves = [];
+    for (var i = 0; i < availSpots.length; i++){
+        var move = {};
+        move.index = newBoard[availSpots[i]];
+        newBoard[availSpots[i]] = player;
+
+        if (player == comp) {
+            var result = minimax(newBoard, huPlayer);
+            move.score = result.score;
+        } else {
+            var result = minimax(newBoard, comp);
+            move.score = result.score;
+        }
+
+        newBoard[availSpots[i]] = move.index;
+
+        moves.push(move);
+    }
+
+    var bestMove;
+    if(player === comp) {
+        var bestScore = -10000;
+        for(var i = 0; i< moves.length; i++) {
+            if (moves[i].score > bestScore) {
+                bestScore = moves[i].score;
+                bestMove = i;
+            }
+        }
+    } else {
+        var bestScore = 10000;
+        for(var i = 0; i< moves.length; i++) {
+            if (moves[i].score < bestScore) {
+                bestScore = moves[i].score;
+                bestMove = i;
+            }
+        }
+    }
+    return moves[bestMove];
+}
 
 
 
